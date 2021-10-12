@@ -1,0 +1,14 @@
+<h3>Cart</h3>
+
+<p *ngIf="items.length!=0">
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<p  *ngIf="items.length==0">Your Cart Is Empty.</p>
+
+<button *ngIf="items.length!=0" class="button" routerLink="/checkout">Proceed To Checkout</button>
